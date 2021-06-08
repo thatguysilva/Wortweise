@@ -1,0 +1,74 @@
+nav{
+    width: 100%;
+    overflow:auto;
+    background: white;
+
+    border-color: black;
+}
+
+
+ul{
+    padding: 10px 50px;
+    width: 650px;
+    margin: 200px 0 0 250px;
+    list-style: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-color: black;
+
+}
+
+
+
+li{
+    /*float: left;*/
+    display: inline-block;
+    width: 150px;
+    
+    border-color: black;
+
+}
+
+li a {
+
+    display: inline-block;
+    padding: 20px 5px;
+    text-decoration: none;
+    font-family: Libre-Baskerville;
+    color: black;
+    text-align: center;
+    border-color: black;
+}
+
+.cool-link::after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width .3s
+    }
+    
+.cool-link:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+    
+.logo img{
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 300px;
+}
+
+.myblog{
+    text-align: justify;
+    margin-top: 100px;
+    margin: auto;
+    width: 750px;
+    font-family: 'Lora', Georgia, serif;
+
+}
+
+.time{
+    font: 400 1.5rem/1.2 "Roboto";
+}
