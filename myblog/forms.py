@@ -7,14 +7,15 @@ from django.forms import TextInput
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name', 'body')
+        fields = ('name', 'message')
+        message = forms.CharField(widget=forms.Textarea)
         widgets = {
             'name': TextInput(attrs={
                 'class': "form-control",
                 'style': 'max-width: 300px;',
                 'placeholder': 'Name'
                 }),
-            'body': TextInput(attrs={
+            'message': forms.Textarea(attrs={
                 'class': "form-control", 
                 'placeholder': 'Your message'
                 })
@@ -23,7 +24,7 @@ class CommentForm(forms.ModelForm):
  
     def __init__(self, *args, **kwargs):
     	super(CommentForm, self).__init__(*args, **kwargs) # Call to ModelForm constructor
-    	self.fields['name'].widget.attrs['style'] = 'width:400px; height:25px;'
-    	self.fields['body'].widget.attrs['style']  = 'width:700px; height:100px;'
+    	self.fields['name'].widget.attrs['style'] = 'width:750px; height:25px;'
+    	self.fields['message'].widget.attrs['style']  = 'width:750px; height:100px;'
 
 
