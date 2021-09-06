@@ -1,0 +1,1 @@
+web: gunicorn wortweise.wsgi --log-file -

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<head>
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href= "{% static 'polls/style-blog.css' %}?{% now "U" %}">
+
+<title></title>
+</head>
+<body>
+    <div class="logo">
+    <a href="{% url 'home' %}"><img src = "{% static 'polls/images/wort-logo1.png' %}?{% now "U" %}" ></a>    
+    </div>
+
+    <nav>
+        <ul>
+        <li><a href="{% url 'home' %}" class="cool-link">Home</a></li>
+        <li><a href="{% url 'about-detail' %}" class="cool-link">&Uuml;ber mich</a></li>
+        <li><a href="{% url 'list-detail' %}" class="cool-link">Archiv</a></li>
+        <li><a href="{% url 'contact-detail' %}" class="cool-link">Kontakt</a></li>
+        </ul>
+
+    </nav>
+
+ 
+
+
+
+</body>
+
+
+<br>
+<div class="blog-posts">
+{% for post in object_list %}
+    <div class="blogtitle">
+        <h2>{{ post.title }}<h2/>
+    </div>
+    <time datetime="03-06-2021"><p style="color:gray;font-size:1.3vw;">{{ post.time }}</p></time>
+    <div class="blogtext">
+        <p>     {{ post.body|slice:":200"}}... </p>
+    </div>
+    <p><a href="{% url 'post_detail' post.slug %}" style="text-decoration:none; color:darkslategray;">Continue reading →</a></p>
+    <hr>
+    
+
+{% endfor%}
+</div>
+
+{% if is_paginated %}
+
+  <div class="myfooter">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo;Newer posts</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">Previous posts &raquo;</a></li>
+
+    {% endif %}
+  </div>
+
+
+{% endif %}
+
+</html>
+
+
+
+
+
+
+
+
+
+

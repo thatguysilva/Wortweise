@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<head>
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href= "{% static 'polls/style-blog.css' %}?{% now "U" %}">
+
+<title></title>
+</head>
+<body>
+    <div class="logo">
+    <a href="{% url 'home' %}"><img src = "{% static 'polls/images/wort-logo1.png' %}?{% now "U" %}" ></a>    
+    </div>
+
+    <nav>
+        <ul>
+        <li><a href="{% url 'home' %}" class="cool-link">Home</a></li>
+        <li><a href="{% url 'about-detail' %}" class="cool-link">&Uuml;ber mich</a></li>
+        <li><a href="{% url 'list-detail' %}" class="cool-link">Archiv</a></li>
+        <li><a href="{% url 'contact-detail' %}" class="cool-link">Kontakt</a></li>
+        </ul>
+
+    </nav>
+
+ 
+
+
+
+</body>
+
+
+<br>
+<br>
+<div class="blog-posts">
+
+{% for post in object_list %}
+    <li1><a href="{% url 'post_detail' post.slug %}">•{{ post.time }} - {{post.title}}</a></li1>
+    <br>
+    <br>
+{% endfor %}
+
+</div>
+
+
+
+</html>
