@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+^!+#al)=w1vy-0ile207_i3ym)8l3o+kgv$sbd+k4j3aoz1j7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['wortweise.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['wortweise.herokuapp.com', '127.0.0.1', 'www.wortweise.online', 'wortweise.online']
 
 
 # Application definition
