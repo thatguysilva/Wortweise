@@ -4,9 +4,9 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
+    
     dependencies = [
-        ('wortweise', '0002_auto_20210805_1701'),
+        ('wortweise', '0002_auto_20210805_1701', 'contenttypes', '0002_remove_content_type_name'),
     ]
 
     operations = [
