@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+^!+#al)=w1vy-0ile207_i3ym)8l3o+kgv$sbd+k4j3aoz1j7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['wortweise.herokuapp.com', '127.0.0.1', 'www.wortweise.online', 'wortweise.online']
 
@@ -139,4 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if os.getcwd() == '/app':
 	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 	SECURE_SSL_REDIRECT = True
-	DEBUG = True
+	DEBUG = False
