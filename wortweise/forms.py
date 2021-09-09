@@ -17,7 +17,7 @@ class CommentForm(forms.ModelForm):
                 }),
             'message': forms.Textarea(attrs={
                 'class': "form-control", 
-                'placeholder': 'Your message'
+                'placeholder': 'Kommentar'
                 })
         }
  

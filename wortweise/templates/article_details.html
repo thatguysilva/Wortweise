@@ -54,7 +54,7 @@
 
 <div class = "blog-posts">
         <!-- comments -->
-       <h3>Comments ({{ comments.count }}):</h3>
+       <h3>Kommentare ({{ comments.count }}):</h3>
         {% for comment in comments %}
         <div class="comments" style="padding: 1px;">
           <p style ="font-weight: bold" class="font-weight-bold">
@@ -76,13 +76,13 @@
         </div>
         {% else %}
 <div class = "blog-posts">
-        <h3>Leave a comment:</h3>
+        <h3>Schreibe einen Kommentar:</h3>
         <form method="post" style="margin-top: 1.3em;" input[type=text]="width:100%;   border: 2px solid blue;
   border-radius: 4px">
 		 <p>{% csrf_token %}
           {{ comment_form.name}}</p>
          <p>{{ comment_form.message }}</p>
-          <button type="submit" style="color: white; background-color: black; width: 100%;font: bold; height: 30px;" class="btn btn-primary  btn-block">Submit</button>
+          <button type="submit" style="color: white; background-color: black; width: 100%;font: bold; height: 30px;" class="btn btn-primary  btn-block">Abschicken</button>
         </form>
         {% endif %}
       </div>

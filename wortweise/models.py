@@ -17,6 +17,8 @@ class Post(models.Model):
 		return self.title + ' | ' + str(self.author)
 
 # Create your models here.
+# This is merely a comment attempt at fixing an error.
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
